@@ -1,14 +1,33 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+    <h2 class="headerText">
+      Array simétrico
+    </h2>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <div class="ion-padding">
-    The world is your oyster.
-    <p>If you get lost, the <a target="_blank" rel="noopener" href="https://ionicframework.com/docs/">docs</a> will be your guide.</p>
-  </div>
+  <ion-item>
+    <ion-label>Elementos do vetor:</ion-label>
+    <ion-input type="number" pattern="[0-9]*" [(ngModel)]="this.arrayElement">
+    </ion-input>
+  </ion-item>
+
+  <ion-button color="primary" (click)="arrayPush()">Acrescentar
+  </ion-button>
+
+  <ion-button color="success" (click)="verify()">Vericar
+  </ion-button>
+
+  <ion-button color="danger" (click)="arrayClean()">Limpar
+  </ion-button>
+  <ion-list>
+    <ion-item *ngFor="let item of this.arrayInput">{{item}}</ion-item>
+  </ion-list>
 </ion-content>
+
+<ion-footer>
+  <ion-toolbar>
+    <h2 class="footerText">Desenvolvido por Felipe Rodrigues</h2>
+  </ion-toolbar>
+</ion-footer>
